@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-class - Select elements</title>
+    <style>
+        p:first-child {
+            background-color: yellow;
+        }
+        p:nth-child(2) {
+            background-color:orange;
+        }
+        p:last-child {
+            background-color: mediumaquamarine;
+        }
+        p:only-child {
+            border: 3px solid blue;
+        }
+        section:first-of-type {
+            background-color: tomato;
+        }
+        section:nth-of-type(2) {
+            background-color:aqua;
+        }
+        section:last-of-type {
+            background-color: lightblue;
+        }
+        section:only-of-type {
+            border: 3px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>:first-child</h2>
+    <p>This paragraph is not the first child of its parent</p>
+    <div>
+        <p>This paragraph is the first child of its parent (div).</p>
+        <p>This paragraph is the second child of its parent (div).</p>
+        <p>This paragraph is not the last child of its parent.</p>
+    </div>
+    <div><p>This is a only paragraph</p></div>
+    <p>This paragraph is not the last child of its parent</p>
+
+    <h2>:first-of-type</h2>
+    <section>This section is not the first child of its parent, but it is the first of section</section>
+    <div>
+        <section>This section is the first child of its parent (div).</section>
+        <section>This section is the second child of its parent (div).</section>
+        <section>This section is not the last child of its parent.</section>
+    </div>
+    <div><section>This is a only section</section></div>
+    <section>This section is not the last child of its parent, but it is the first of section</section>
+</body>
+
+</html>

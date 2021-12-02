@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Template</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0 100px;
+            background-color: #173451;
+            color: wheat;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 100px 100px 150px 100px 100px;
+            grid-template-rows: 50px 50px;
+            background-color: #992154;
+        }
+
+        .item {
+            border: solid 1px white;
+            background-color: #fcbf16;
+            color: #173451;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        #ex2 .item:nth-child(1) {
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+
+        #ex2 .item:nth-child(3) {
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+
+        #ex3 .item:nth-child(1) {
+            grid-column-start: 2;
+            grid-column-end: span 2;
+        }
+
+        #ex4 .container {
+            grid-template-columns: [first] 100px [second] 100px [third] 150px [fourth] 100px [fifth] 100px [sixth];
+            grid-template-rows: [line-1] 50px [line-2] 50px [line-3];
+        }
+
+        #ex4 .item:nth-child(1) {
+            grid-column-start: 2;
+            grid-column-end: span fourth;
+        }
+
+        #ex5 .item:nth-child(3) {
+            grid-column: 5/6;
+            grid-row: 1 / 3;
+        }
+
+        #ex6 .item-a {
+            grid-area: header;
+        }
+
+        #ex6 .item-b {
+            grid-area: main;
+        }
+
+        #ex6 .item-c {
+            grid-area: sidebar;
+        }
+
+        #ex6 .item-d {
+            grid-area: 1 / 5 / 3 / 6;
+        }
+        #ex6 .container {
+            grid-template-areas:
+                "header header header header"
+                "sidebar . main main";
+        }
+        #ex7 .container {
+            grid-template: 
+            [row1-start] "header header header header header" 50px [row1-end]
+            [row2-start] ". footer footer footer ." 50px [row2-end]
+            / 100px 100px 150px 100px 100px
+            ;
+        }
+        #ex7 .item-a {
+            grid-area: header;
+        }
+
+        #ex7 .item-b {
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="ex1">
+        <h3>grid-template-[columns/rows]: px</h3>
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </section>
+    <section id="ex2">
+        <h3>grid-[column/row]-[start/end]: line number</h3>
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </section>
+    <section id="ex3">
+        <h3>grid-[column/row]-[start/end]: span number</h3>
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </section>
+    <section id="ex4">
+        <h3>grid-[column/row]-[start/end]: span name</h3>
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </section>
+    <section id="ex5">
+        <h3>grid-column, grid-row</h3>
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </section>
+    <section id="ex6">
+        <h3>grid-template-area, grid-area</h3>
+        <div class="container">
+            <div class="item item-a">a</div>
+            <div class="item item-b">b</div>
+            <div class="item item-c">c</div>
+            <div class="item item-d">d</div>
+        </div>
+    </section>
+    <section id="ex7">
+        <h3>grid-template-area, grid-area</h3>
+        <div class="container">
+            <div class="item item-a">a</div>
+            <div class="item item-b">b</div>
+        </div>
+    </section>
+</body>
+
+</html>

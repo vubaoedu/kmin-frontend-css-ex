@@ -1,0 +1,48 @@
+div.visible {
+    width: 300px;
+    height: 100px;
+    background-color: mediumaquamarine;
+    overflow: visible; /*default*/
+}
+div.hidden {
+    width: 300px;
+    height: 100px;
+    background-color: tomato;
+    overflow: hidden;
+}
+div.scroll {
+    width: 300px;
+    height: 100px;
+    background-color: lightblue;
+    overflow: scroll;
+}
+div.auto {
+    width: 300px;
+    height: 100px;
+    background-color: lightgoldenrodyellow;
+    overflow: auto;
+}
+div.x-scroll {
+    background-color: lightblue;
+    width: 40px;
+    overflow-x: scroll;
+
+  }
+  
+  div.x-hidden {
+    background-color: lightblue;
+    width: 40px;
+    overflow-x: hidden;
+  }
+  
+  div.x-auto {
+    background-color: lightblue;
+    width: 40px;
+    overflow-x: auto;
+  }
+  
+  div.x-visible {
+    background-color: lightblue;
+    width: 40px;
+    overflow-x: visible;
+  }

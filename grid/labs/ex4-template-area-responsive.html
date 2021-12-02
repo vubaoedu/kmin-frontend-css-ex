@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4: Template area with responsive</title>
+    <style>
+        body {
+            margin: 40px;
+        }
+        .wrapper {
+            border: solid 2px #992154;
+            margin: 0 auto;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-gap: 1em;
+            grid-template-areas:
+                "header"
+                "sidebar"
+                "content"
+                "sidebar2"
+                "footer"
+        }
+        .box {
+            background-color: #fcbf16;
+            color: #173451;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 150%;
+        }
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .sidebar2 {
+            grid-area: sidebar2;
+        }
+
+        .content {
+            grid-area: content;
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+        @media only screen and (min-width: 576px) {
+            .wrapper {
+
+                grid-template-columns: 20% auto;
+                grid-template-areas:
+                    "header   header"
+                    "sidebar  content"
+                    "sidebar2 sidebar2"
+                    "footer   footer";
+            }
+        }
+
+        @media only screen and (min-width: 992px) {
+            .wrapper {
+                grid-gap: 20px;
+                grid-template-columns: 250px auto 250px;
+                grid-template-areas:
+                    "header  header  header"
+                    "sidebar content sidebar2"
+                    "footer  footer  footer";
+                max-width: 1400px;
+
+            }
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box header">Header</div>
+        <div class="box sidebar">Sidebar left</div>
+        <div class="box sidebar2">Sidebar right</div>
+        <div class="box content">Content
+            <br /> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        </div>
+        <div class="box footer">Footer</div>
+    </div>
+</body>
+
+</html>

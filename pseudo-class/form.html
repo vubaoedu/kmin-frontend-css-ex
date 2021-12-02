@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input:checked {
+            height: 50px;
+            width: 50px;
+        }
+
+        input[type=text]:enabled {
+            background: #ffff00;
+        }
+
+        input[type=text]:disabled {
+            background: #dddddd;
+        }
+
+        input[type=text]:focus {
+            background-color: red;
+        }
+
+        input[type=number]:in-range {
+            border: 2px solid yellow;
+        }
+
+        input[type=number]:out-of-range {
+            border: 2px solid red;
+        }
+
+        input[type=email]:invalid {
+            border: 2px solid red;
+        }
+
+        input[type=email]:valid {
+            background-color: yellow;
+        }
+
+        input.a:optional {
+            background-color: yellow;
+        }
+
+        input.a:required {
+            background-color: red;
+        }
+
+        input.b:read-only {
+            background-color: red;
+        }
+
+        input.b:read-write {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#">
+        <h2>:checked</h2>
+        <input type="radio" checked="checked" value="male" name="gender"> Male<br>
+        <input type="radio" value="female" name="gender"> Female<br>
+        <input type="checkbox" checked="checked" value="Bike"> I have a bike<br>
+        <input type="checkbox" value="Car"> I have a car
+
+        <h2>:enabled, :disabled và :focus</h2>
+        First name: <input type="text" value="Mickey"><br>
+        Last name: <input type="text" value="Mouse"><br>
+        Country: <input type="text" disabled="disabled" value="Disneyland">
+
+        <h2>:in-range và :out-of-range</h2>
+        <input type="number" min="5" max="10" value="7">
+
+        <h2>:invalid và :valid</h2>
+        <input type="email" value="supportEmail">
+        <input type="email" value="supportEmail@gmail.com">
+
+        <h2>:optional</h2>
+        <p>An optional input element:<br><input class="a"></p>
+        <p>A required input element:<br><input required class="a"></p>
+
+        <h2>:read-only và :read-write</h2>
+        <p>A normal input element:<br><input value="hello" class="b"></p>
+
+        <p>A readonly input element:<br><input readonly value="hello" class="b"></p>
+    </form>
+</body>
+
+</html>

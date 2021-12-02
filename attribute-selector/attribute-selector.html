@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute selector</title>
+    <style>
+        
+        a[href="https://kmin.edu.vn"] {
+            color: tomato;
+            font-size: 2em;
+        }
+        
+        .gallery img[alt*="logo"] {
+            border: 5px solid tomato;
+            
+        }
+
+        .gallery2 img[alt~="logo"] {
+            border: 5px solid tomato;
+        }
+
+        .gallery3 img[alt^="logo"] {
+            border: 5px solid tomato;
+        }
+
+        li[title|="1990"] {
+            color: red;
+        }
+
+        a[href$="pdf"] {
+            border: 3px solid tomato;
+        }
+
+        img {
+            width: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>[attribute="value"]</h2>
+    <em>Chọn attribute chính xác bằng value</em>
+    <p><a href="https://kmin.edu.vn">Kmin Academy</a></p>
+    <p><a href="https://hit.kmin.edu.vn">Kmin Hit Challenge</a></p>
+    <hr>
+
+    <h2>[attribute*="value"]</h2>
+    <em>Chọn attribute có chứa value</em>
+    <div class="gallery">
+        <img src="../logo.png" alt="Kmin logo">
+        <img src="../logo.png" alt="Kmin oglo">
+        <img src="../logo.png" alt="Kminlogoooo">
+    </div>
+    <hr>
+
+    <h2>[attribute~="value"]</h2>
+    <em>Chọn attribute có chứa value dưới dạng từ (có khoảng trắng ngăn cách)</em>
+    <div class="gallery2">
+        <img src="../logo.png" alt="Kmin logo">
+        <img src="../logo.png" alt="Kmin     logo">
+        <img src="../logo.png" alt="Kminlogoooo">
+    </div>
+    <hr>
+
+    <h2>[attribute^="value"]</h2>
+    <em>Chọn attribute bắt đầu bằng value</em>
+    <div class="gallery3">
+        <img src="../logo.png" alt="logo Kmin">
+        <img src="../logo.png" alt="logoooo Kmin">
+        <img src="../logo.png" alt="Kmin logo">
+    </div>
+    <hr>
+
+    <h2>[attribute|="value"]</h2>
+    <em>Chọn attribute bắt đầu bằng value có dấu gạch ngang phía sau</em>
+    <ul>
+        <li title="1980-1989">Gen X</li>
+        <li title="1990-1999">Gen Y</li>
+        <li title="2000 ...">Gen Z</li>
+    </ul>
+    <hr>
+
+    <h2>[attribute$="value"]</h2>
+    <em>Chọn attribute kết thúc bằng value</em>
+    <p class="story">Hãy tham khảo <a href="//s3-us-west-2.amazonaws.com/s.cdpn.io/652/example.pdf">website</a></i>
+    </p>
+</body>
+
+</html>

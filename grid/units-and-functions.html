@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Units and Functions</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0 100px;
+            background-color: #173451;
+            color: wheat;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            background-color: #992154;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .item {
+            border: solid 1px white;
+            background-color: #fcbf16;
+            color: #173451;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        #ex1 .container {
+            grid-template-columns: 50px 3fr 1fr;
+           
+        }
+        #ex2 .container {
+            grid-template-columns: min-content 3fr 1fr auto;
+        }
+        #ex3 .container {
+            grid-template-columns: minmax(50px, 100px) 3fr 1fr auto;
+        }
+        #ex4 .container {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    </style>
+</head>
+
+<body>
+    <section id="ex1">
+        <h3>fr</h3>
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </section>
+    <section id="ex2">
+        <h3>min-content, max-content, auto</h3>
+        <div class="container">
+            <div class="item">Kmin Academy</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </section>
+    <section id="ex3">
+        <h3>minmax()</h3>
+        <div class="container">
+            <div class="item">Kmin Academy</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </section>
+    <section id="ex4">
+        <h3>repeat()</h3>
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+    </section>
+</body>
+
+</html>
